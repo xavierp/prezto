@@ -81,3 +81,8 @@ for file in ~/.{,exports,aliases,functions,extra}; do
 done;
 unset file;
 
+# import iterm2 shell integration if exists
+ITERMINTEGR=".iterm2_shell_integration.zsh"
+if [ $TERM_PROGRAM = "iTerm.app" ] && [ -r "$ITERMINTEGR" ] && [ -f "$ITERMINTEGR" ]; then
+	source "$ITERMINTEGR"
+fi
